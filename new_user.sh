@@ -1,7 +1,7 @@
 groups=($1 adm cdrom sudo plugdev dip)
 
-if [ ! -z ${1+x} ]; then
-  adduser $1
+if [ ! -z ${2+x} ]; then
+  adduser $1 -p $2
 
   for group in "${groups[@]}"; do
     adduser $1 $group
